@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestor de Calificaciones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Libre+Franklin:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="head">
+      <div>
+        <div class="eyebrow">Registro de notas</div>
+        <h1>Gestor de Calificaciones</h1>
+      </div>
+      <section class="course" aria-label="Datos del curso">
+        <div class="field">
+          <label for="docente">Nombre del docente</label>
+          <input id="docente" type="text" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="materia">Materia</label>
+          <input id="materia" type="text" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="minima">Nota mínima</label>
+          <input id="minima" class="num" type="number" step="0.1" min="0" max="5" inputmode="decimal">
+        </div>
+      </section>
+    </header>
+
+    <section class="stats" aria-label="Resumen del grupo" id="stats"></section>
+
+    <section class="book">
+      <div class="book-top">
+        <p>Escala de 0.0 a 5.0. Escriba las notas en los recuadros; el promedio y el estado se calculan solos.</p>
+        <button class="btn" id="add" type="button">Agregar alumno</button>
+      </div>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>N.º</th>
+              <th class="l">Nombre del alumno</th>
+              <th>Nota 1</th>
+              <th>Nota 2</th>
+              <th>Nota 3</th>
+              <th>Nota 4</th>
+              <th>Promedio</th>
+              <th>Estado</th>
+              <th><span class="sr">Quitar</span></th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+          <tfoot id="foot"></tfoot>
+        </table>
+      </div>
+    </section>
+
+    <p class="note">Los nombres, el docente y las notas son datos de ejemplo. Los cambios se guardan en este navegador.</p>
+  </div>
+
+  <script src="apps.js"></script>
+</body>
+</html>
